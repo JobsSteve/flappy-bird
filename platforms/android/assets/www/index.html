@@ -5,21 +5,51 @@
     <meta name="format-detection" content="telephone=no" />
     <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link rel="stylesheet" type="text/css" href="css/topcoat-dark.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
     <title>Flappy Bird</title>
 </head>
 <body>
-    <div class="app">
-        <h1>Flappy Bird</h1>
-        <div id="game-container" class="blink">
-            <p class="event listening">Connecting to Device</p>
-            <p class="event received">Device is Ready</p>
+    <div id="game-activity-menu" class="show">
+        <div class="topcoat-navigation-bar">
+            <div class="topcoat-navigation-bar__item center full">
+                <h1 class="topcoat-navigation-bar__title">Flappy Bird</h1>
+            </div>
+        </div>
+        <div class="menu">            
+            <button class="topcoat-button--cta startNewGameButton">Start New Game</button>
+            <button class="topcoat-button--cta showHighscoresButton">Highscores</button>
+            <button class="topcoat-button--cta exitFromGameButton">Exit</button>
         </div>
     </div>
+    
+    <div id="game-activity-scene" class="hide">
+        <h1>Here will be game</h1>
+        <button class="topcoat-button--cta backToMainMenuButton">Back</button>
+    </div>
+    
+    <div id="game-activity-records" class="hide">
+        <div class="topcoat-navigation-bar">
+            <div class="topcoat-navigation-bar__item center full">
+                <h1 class="topcoat-navigation-bar__title">Highscores</h1>
+            </div>
+        </div>
+        <h1>Here will be records</h1>
+        <button class="topcoat-button--cta backToMainMenuButton">Back</button>
+    </div>
+    
     <script type="text/javascript" src="phonegap.js"></script>
-    <script type="text/javascript" src="js/Game.js"></script>
-    <script type="text/javascript" src="js/Events.js"></script>
+
+    <script type="text/javascript" src="js/vendor/jquery-2.1.0.min.js"></script>
+
+    <script type="text/javascript" src="js/game/Game.js"></script>
+    <script type="text/javascript" src="js/game/Config.js"></script>
+    <script type="text/javascript" src="js/game/Helper.js"></script>
+    <script type="text/javascript" src="js/game/Events.js"></script>
+
+    <script type="text/javascript" src="js/game/Bird.js"></script>
     <script>
+        // document.addEventListener('deviceready', Game.initialize, false);
         Game.initialize();
     </script>
 </body>
