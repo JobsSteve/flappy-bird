@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.game.flappybird" version="0.1.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+<widget id="com.ghaiklor.flappybird" version="0.1.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     <name>Flappy Bird</name>
     <description>
         Flappy Bird is a mobile game in which the player controls a flying bird by touching the screen to flap its wings and navigate between a series of pipes without any contact.

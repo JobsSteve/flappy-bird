@@ -6,11 +6,11 @@
     <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
     <link rel="stylesheet" href="css/jquery.mobile-1.4.1.min.css">
-    <link rel="stylesheet" type="text/css" href="css/main.css">
     <title>Flappy Bird</title>
 </head>
 <body>
 
+    <!-- MAIN MENU -->
     <div data-role="page" id="main-menu" data-theme="b">
         <div data-role="header">
             <h1>Flappy Bird</h1>
@@ -25,12 +25,12 @@
         </div>
     </div>
 
+    <!-- GAME SCREEN -->
     <div data-role="page" id="game" data-theme="b">
-        <div role="main" class="ui-content">
-            <h1>Game</h1>
-        </div>
+        <div id="game-scene"></div>
     </div>
 
+    <!-- HIGHSCORES -->
     <div data-role="page" id="highscores" data-theme="b">
         <div data-role="header">
             <a href="#main-menu" data-icon="back" data-transition="flow" data-direction="reverse" class="ui-btn-left">Menu</a>
@@ -46,6 +46,7 @@
         </div>
     </div>
 
+    <!-- EXIT CONFIRMATION -->
     <div data-role="page" id="exit" data-theme="b">
         <div role="main" class="ui-content">
             <ul data-role="listview">
@@ -55,6 +56,7 @@
         </div>
     </div>
 
+    <!-- SETTINGS -->
     <div data-role="page" id="settings" data-theme="b">
         <div data-role="header">
             <a href="#main-menu" data-icon="back" data-transition="flow" data-direction="reverse" class="ui-btn-left">Menu</a>
@@ -69,15 +71,13 @@
 
     <script type="text/javascript" src="js/vendor/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="js/vendor/jquery.mobile-1.4.1.min.js"></script>
+    <script type="text/javascript" src="js/vendor/pixi.js"></script>
 
     <script type="text/javascript" src="js/game/Game.js"></script>
     <script type="text/javascript" src="js/game/Config.js"></script>
-    <script type="text/javascript" src="js/game/Events.js"></script>
-
+    <script type="text/javascript" src="js/game/Stage.js"></script>
     <script type="text/javascript" src="js/game/Bird.js"></script>
-    <script>
-        // document.addEventListener('deviceready', Game.initialize, false);
-        Game.initialize();
-    </script>
+
+    <script src="js/app.js"></script>
 </body>
 </html>

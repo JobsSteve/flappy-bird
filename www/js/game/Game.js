@@ -1,26 +1,22 @@
 var Game = (function(window, document, Game) {
 
-    Game = {
-        /**
-         * Initialize game
-         */
-        initialize: function() {
-            Game.Events.bindEvents();
-        },
+    Game = function(options) {
+        var self = this;
 
-        /**
-         * Start new Game
-         */
-        startNewGame: function() {
-            console.log('Starting a new game');
-        },
+        $.extend(Game.Config, options);
 
-        /**
-         * Close application
-         */
-        exit: function() {
-            navigator.app.exitApp();
-        }
+        this.stage = new Game.Stage().addRenderer();
+        this.bird = new Game.Bird().addToStage(this.stage);
+
+        requestAnimFrame(function() {
+            self.stage.renderLoop(self.stage);
+        });
+
+        return this;
+    };
+
+    Game.prototype = {
+
     };
 
     return Game;
