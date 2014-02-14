@@ -1,6 +1,8 @@
 var Game = (function(window, document, Game) {
 
-    Game.Config = {};
+    Game.Config = {
+        birdSpriteUrl: './img/bird.png'
+    };
 
     return Game;
 })(window, document, window.Game || {});
