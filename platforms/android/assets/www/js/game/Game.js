@@ -9,24 +9,10 @@ var Game = (function(window, document, Game) {
         },
 
         /**
-         * Show main menu in game
-         */
-        showMainMenu: function() {
-            Game.Helper.showActivity(Game.Config.Activities.menuId);
-        },
-
-        /**
          * Start new Game
          */
         startNewGame: function() {
-            Game.Helper.showActivity(Game.Config.Activities.sceneId);
-        },
-
-        /**
-         * Show highscores
-         */
-        showHighscores: function() {
-            Game.Helper.showActivity(Game.Config.Activities.recordsId);
+            console.log('Starting a new game');
         },
 
         /**

@@ -5,14 +5,23 @@ var Game = (function(window, document, Game) {
          * Bind all events
          */
         bindEvents: function() {
-            var buttons = Game.Config.Buttons;
+            $('#main-menu').on('pageshow', Game.Events.onMainMenuShow);
+            $('#game').on('pageshow', Game.Events.onGameShow);
+            $('#highscores').on('pageshow', Game.Events.onHighscoresShow);
+            $('#settings').on('pageshow', Game.Events.onSettingsShow);
 
-            //Binding all events from Game.Config.Buttons
-            for (var key in buttons) {
-                if (buttons.hasOwnProperty(key)) {
-                    $('.' + key).on('click touchend', buttons[key]);
-                }
-            }
+            $('#exitFromGameButton').on('click', Game.Events.onExitGame);
+        },
+
+        onMainMenuShow: function() {},
+        onGameShow: function() {
+            Game.startNewGame();
+        },
+        onHighscoresShow: function() {},
+        onSettingsShow: function() {},
+
+        onExitGame: function() {
+            Game.exit();
         }
     };
 
