@@ -5,46 +5,73 @@
     <meta name="format-detection" content="telephone=no" />
     <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-    <link rel="stylesheet" type="text/css" href="css/topcoat-dark.css">
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.1.min.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <title>Flappy Bird</title>
 </head>
 <body>
-    <div id="game-activity-menu" class="show">
-        <div class="topcoat-navigation-bar">
-            <div class="topcoat-navigation-bar__item center full">
-                <h1 class="topcoat-navigation-bar__title">Flappy Bird</h1>
-            </div>
+
+    <div data-role="page" id="main-menu" data-theme="b">
+        <div data-role="header">
+            <h1>Flappy Bird</h1>
+            <a href="#settings" data-icon="gear" data-transition="flow" class="ui-btn-right">Settings</a>
         </div>
-        <div class="menu">            
-            <button class="topcoat-button--cta startNewGameButton">Start New Game</button>
-            <button class="topcoat-button--cta showHighscoresButton">Highscores</button>
-            <button class="topcoat-button--cta exitFromGameButton">Exit</button>
+        <div role="main" class="ui-content">
+            <ul data-role="listview" data-inset="true" data-theme="a">
+                <li><a href="#game" data-transition="flow">Start new game</a></li>
+                <li><a href="#highscores" data-transition="flow">Highscores</a></li>
+                <li><a href="#exit" data-transition="flow">Exit</a></li>
+            </ul>
         </div>
     </div>
-    
-    <div id="game-activity-scene" class="hide">
-        <h1>Here will be game</h1>
-        <button class="topcoat-button--cta backToMainMenuButton">Back</button>
-    </div>
-    
-    <div id="game-activity-records" class="hide">
-        <div class="topcoat-navigation-bar">
-            <div class="topcoat-navigation-bar__item center full">
-                <h1 class="topcoat-navigation-bar__title">Highscores</h1>
-            </div>
+
+    <div data-role="page" id="game" data-theme="b">
+        <div role="main" class="ui-content">
+            <h1>Game</h1>
         </div>
-        <h1>Here will be records</h1>
-        <button class="topcoat-button--cta backToMainMenuButton">Back</button>
+    </div>
+
+    <div data-role="page" id="highscores" data-theme="b">
+        <div data-role="header">
+            <a href="#main-menu" data-icon="back" data-transition="flow" data-direction="reverse" class="ui-btn-left">Menu</a>
+            <h1>Highscores</h1>
+        </div>
+        <div role="main" class="ui-content">
+            <ul data-role="listview">
+                <li>Test</li>
+                <li>Test</li>
+                <li>Test</li>
+                <li>Test</li>
+            </ul>
+        </div>
+    </div>
+
+    <div data-role="page" id="exit" data-theme="b">
+        <div role="main" class="ui-content">
+            <ul data-role="listview">
+                <li><a href="#" id="exitFromGameButton">Yes</a></li>
+                <li><a href="#main-menu" data-transition="flow" data-direction="reverse">No</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div data-role="page" id="settings" data-theme="b">
+        <div data-role="header">
+            <a href="#main-menu" data-icon="back" data-transition="flow" data-direction="reverse" class="ui-btn-left">Menu</a>
+            <h1>Settings</h1>
+        </div>
+        <div role="main" class="ui-content">
+            Settings
+        </div>
     </div>
     
     <script type="text/javascript" src="phonegap.js"></script>
 
-    <script type="text/javascript" src="js/vendor/jquery-2.1.0.min.js"></script>
+    <script type="text/javascript" src="js/vendor/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="js/vendor/jquery.mobile-1.4.1.min.js"></script>
 
     <script type="text/javascript" src="js/game/Game.js"></script>
     <script type="text/javascript" src="js/game/Config.js"></script>
-    <script type="text/javascript" src="js/game/Helper.js"></script>
     <script type="text/javascript" src="js/game/Events.js"></script>
 
     <script type="text/javascript" src="js/game/Bird.js"></script>
